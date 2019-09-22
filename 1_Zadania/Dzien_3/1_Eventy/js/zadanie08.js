@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
     element2.addEventListener("click", function (event) {
         makeColor(this);
         console.log("Click in element 2");
+        event.stopPropagation();
     });
 
     element3.addEventListener("click", function (event) {
@@ -30,6 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
     element5.addEventListener("click", function (event) {
         makeColor(this);
         console.log("Click in element 5");
+        event.stopImmediatePropagation();
     });
 
     element5.addEventListener("click", function (event) {
