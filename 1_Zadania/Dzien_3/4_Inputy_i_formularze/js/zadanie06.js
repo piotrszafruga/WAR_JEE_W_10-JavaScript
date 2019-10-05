@@ -7,7 +7,6 @@ document.addEventListener("DOMContentLoaded", function () {
     var button = document.querySelector(".btn.btn-primary");
 
     var table = document.querySelector('.table.table-bordered');
-    console.log(table);
 
     button.addEventListener('click', function(e) {
         var teams = team1.value != team2.value;
@@ -15,17 +14,18 @@ document.addEventListener("DOMContentLoaded", function () {
         if (teams && 0 < parseInt(points1.value) && 0 < parseInt(points2.value)) {
             var tr = document.createElement('tr');
             var td1 = document.createElement('td');
-            td1.value = team1.value;
+            td1.innerText = team1.value;
             var td2 = document.createElement('td');
-            td1.value = team2.value;
+            td2.innerText = team2.value;
             var td3 = document.createElement('td');
-            td1.value = points1.value + " - " + points2.value;
+            td3.innerText = points1.value + " - " + points2.value;
 
-            // table.appendChild();
+            table.firstElementChild.appendChild(tr);
+            tr.appendChild(td1);
+            tr.appendChild(td2);
+            tr.appendChild(td3);
         }
-
         e.preventDefault();
     })
-
 
 });

@@ -18,11 +18,5 @@ $(document).ready(function() {
         .children('button')
         .closest('.cart-item')
         .addClass('cart-updated');
-
-        console.log($("span[data-task='_task2']")
-            .parent()
-            .siblings('section.shopping')
-            .children('div')
-            .children().eq(2));
 });
 
