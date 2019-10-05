@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var button = document.querySelector(".btn.btn-primary");
     var num = 0;
 
+    console.log(choice[1]);
 
     for (var i = 0; i < 3; i++) {
         choice.addEventListener("click", function() {
@@ -12,15 +13,14 @@ document.addEventListener("DOMContentLoaded", function () {
                     num = i;
                 }
             }
-            console.log(num);
-            logos[0].style.visibility = "visible";
         });
     }
 
-    // button.addEventListener("click", function () {
-    //     logos[i].style.visibility = "hidden";
-    //     logos[(i + 1)%3].style.visibility = "hidden";
-    //     logos[(i + 2)%3].style.visibility = "visible";
-    // });
+    button.addEventListener("click", function (e) {
+        logos[num].style.visibility = "hidden";
+        logos[(num + 1)%3].style.visibility = "hidden";
+        logos[(num + 2)%3].style.visibility = "visible";
+        e.preventDefault();
+    });
 
 });
